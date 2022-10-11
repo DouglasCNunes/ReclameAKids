@@ -36,14 +36,14 @@ public abstract class Publicacao {
         return curtidas;
     }
 
-    public abstract void setCurtida(Avaliador curtida);
+    public abstract void setCurtida(Avaliador avaliadorCurtida);
 
-    protected boolean addCurtida(Avaliador curtida) {
-        return this.curtidas.add(curtida);
+    protected boolean addCurtida(Avaliador avaliadorCurtida) {
+        return this.curtidas.add(avaliadorCurtida);
     }
 
-    protected boolean removeCurtida(Avaliador curtida) {
-        return this.curtidas.remove(curtida);
+    protected boolean removeCurtida(Avaliador avaliadorCurtida) {
+        return this.curtidas.remove(avaliadorCurtida);
     }
 
     public Avaliador getPublicador() {
@@ -53,5 +53,20 @@ public abstract class Publicacao {
     public void setPublicador(Avaliador publicador) {
         this.publicador = publicador;
     }
+
+    protected boolean isCurtida(Avaliador avaliadorCurtida) {
+        List<Avaliador> curtidas = getAllCurtidas();
+        boolean isCurtida = false;
+
+        // Verifica se o avaliador curtiu
+        for (Avaliador curtida : curtidas) {
+            if (curtida == avaliadorCurtida) {
+                isCurtida = true;
+            }
+        }
+
+        return isCurtida;
+    }
+
 
 }

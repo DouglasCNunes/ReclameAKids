@@ -6,6 +6,13 @@ public abstract class Usuario {
     private String nome;
     private String email;
 
+    public Usuario(String login, String senha, String nome, String email) {
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+        this.nome = nome;
+    }
+
     public String getLogin() {
         return login;
     }

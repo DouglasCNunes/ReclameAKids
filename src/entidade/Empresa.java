@@ -6,4 +6,56 @@ public class Empresa {
     private String razaoSocial;
     private String nomeFantasia;
     private ResponsavelEmpresa responsavelEmpresa;
+
+    public Empresa(String cnpj, String ie, String razaoSocial, String nomeFantasia,
+            ResponsavelEmpresa responsavelEmpresa) {
+        this.cnpj = cnpj;
+        this.ie = ie;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.responsavelEmpresa = responsavelEmpresa;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getIe() {
+        return ie;
+    }
+
+    public void setIe(String ie) {
+        this.ie = ie;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public ResponsavelEmpresa getResponsavelEmpresa() {
+        return responsavelEmpresa;
+    }
+
+    public void setResponsavelEmpresa(ResponsavelEmpresa responsavelEmpresa) {
+        this.responsavelEmpresa = responsavelEmpresa;
+    }
+
+    
+
 }
