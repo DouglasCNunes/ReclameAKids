@@ -6,7 +6,6 @@ import java.util.List;
 public class Avaliacao extends Publicacao {
     private String imagem;
     private int notaProduto;
-    private boolean publicada;
     private String titulo;
     private Produto produto;
     private List<Comentario> comentarios;
@@ -25,6 +24,10 @@ public class Avaliacao extends Publicacao {
         // setando avalição no produto
         produto.addAvaliacao(this);
     }
+
+    // Constructor para avaliação caso produto não exista e empresa exista
+
+    // Constructor para avaliação caso produto e empresa não existam
 
     public List<Avaliador> getAllDescurtidas() {
         return descurtidas;
@@ -77,9 +80,6 @@ public class Avaliacao extends Publicacao {
         return notaProduto;
     }
 
-    public boolean isPublicada() {
-        return publicada;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -99,10 +99,6 @@ public class Avaliacao extends Publicacao {
 
     public void setNotaProduto(int notaProduto) {
         this.notaProduto = notaProduto;
-    }
-
-    public void setPublicada(boolean publicada) {
-        this.publicada = publicada;
     }
 
     public void setTitulo(String titulo) {

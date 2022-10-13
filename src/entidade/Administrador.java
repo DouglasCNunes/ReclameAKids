@@ -11,6 +11,8 @@ public class Administrador extends Usuario {
         this.notificacoes = new ArrayList<Notificacao>();
     }
 
+    // constructor passando usuário
+
     public List<Notificacao> getAllNotificacoes() {
         return notificacoes;
     }

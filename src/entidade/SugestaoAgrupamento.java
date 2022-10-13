@@ -20,20 +20,11 @@ public class SugestaoAgrupamento extends Notificacao {
         return produtos;
     }
 
-    public boolean isProduto(Produto novoProduto) {
-        boolean isProduto = false;
-        for (Produto produto : produtos) {
-            if (produto == novoProduto){
-                isProduto = true;
-            }
-        }
-
-        return isProduto;
+    public boolean addProduto(Produto produto) {
+        return this.produtos.add(produto);
     }
 
-    public void addProduto(Produto produto) {
-        if (!isProduto(produto)) {
-            this.addProduto(produto);
-        } 
+    public boolean removeProduto(Produto produto) {
+        return this.removeProduto(produto);
     }
 }

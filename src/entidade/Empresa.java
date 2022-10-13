@@ -6,14 +6,11 @@ public class Empresa {
     private String razaoSocial;
     private String nomeFantasia;
     private ResponsavelEmpresa responsavelEmpresa;
+    private boolean valida;
 
-    public Empresa(String cnpj, String ie, String razaoSocial, String nomeFantasia,
-            ResponsavelEmpresa responsavelEmpresa) {
-        this.cnpj = cnpj;
-        this.ie = ie;
-        this.razaoSocial = razaoSocial;
+    public Empresa(String  nomeFantasia, boolean valida) {
         this.nomeFantasia = nomeFantasia;
-        this.responsavelEmpresa = responsavelEmpresa;
+        this.valida = valida;
     }
 
     public String getCnpj() {
@@ -54,6 +51,14 @@ public class Empresa {
 
     public void setResponsavelEmpresa(ResponsavelEmpresa responsavelEmpresa) {
         this.responsavelEmpresa = responsavelEmpresa;
+    }
+
+    public boolean isvalida() {
+        return valida;
+    }
+
+    public void setvalida(boolean valida) {
+        this.valida = valida;
     }
 
     
