@@ -6,14 +6,12 @@ import java.util.List;
 public class Avaliacao extends Publicacao {
     private String imagem;
     private int notaProduto;
-    private boolean publicada;
     private String titulo;
     private Produto produto;
     private List<Comentario> comentarios;
     private List<Avaliador> descurtidas;
 
-    // Uma avalicacao nao pode ser curtida e descurtidas por um mesmo avaliador
-
+    // Constructor para Avaliação caso Produto e Empresa existam
     public Avaliacao(String imagem, int notaProduto, String titulo, Produto produto, String data, String descricao,
             Avaliador publicador) {
         super(descricao, data, publicador);
@@ -23,7 +21,13 @@ public class Avaliacao extends Publicacao {
         this.produto = produto;
         this.comentarios = new ArrayList<Comentario>();
         this.descurtidas = new ArrayList<Avaliador>();
+        // setando avalição no produto
+        produto.addAvaliacao(this);
     }
+
+    // Constructor para avaliação caso produto não exista e empresa exista
+
+    // Constructor para avaliação caso produto e empresa não existam
 
     public List<Avaliador> getAllDescurtidas() {
         return descurtidas;
@@ -33,38 +37,76 @@ public class Avaliacao extends Publicacao {
         return this.descurtidas.remove(descurtida);
     }
 
-
-    //Renomear e modularizar
-    @Override
-    public void setCurtida(Avaliador novaCurtida) {
+    private boolean isDescurtida(Avaliador avalidorDescurtida) {
         List<Avaliador> descurtidas = getAllDescurtidas();
         boolean isDescurtida = false;
         // verifica se o avalidor descurtiu
         for (Avaliador descurtida : descurtidas) {
-            if (descurtida == novaCurtida) {
+            if (descurtida == avalidorDescurtida) {
                 isDescurtida = true;
             }
         }
-
-        if (isDescurtida) {
-            removeDescurtidas(novaCurtida);
-        }
-
-        List<Avaliador> curtidas = getAllCurtidas();
-        boolean isCurtida = false;
-
-        // Verifica se o avaliador curtiu
-        for (Avaliador curtida : curtidas) {
-            if (curtida == novaCurtida) {
-                isCurtida = true;
-            }
-        }
-
-        if (isCurtida) {
-            removeCurtida(novaCurtida);
-        } else {
-            addCurtida(novaCurtida);
-        }
-
+        return isDescurtida;
     }
+
+    // Renomear e modularizar
+    @Override
+    public void setCurtida(Avaliador avalidorCurtida) {
+        if (isDescurtida(avalidorCurtida)) {
+            removeDescurtidas(avalidorCurtida);
+        }
+
+        if (isCurtida(avalidorCurtida)) {
+            removeCurtida(avalidorCurtida);
+        } else {
+            addCurtida(avalidorCurtida);
+        }
+    }
+
+    public boolean addComentario(Comentario comentario) {
+        return this.comentarios.add(comentario);
+    }
+
+    public boolean removeComentario(Comentario comentario) {
+        return this.comentarios.remove(comentario);
+    }
+    
+    // Getters and Setters
+    public String getImagem() {
+        return imagem;
+    }
+
+    public int getNotaProduto() {
+        return notaProduto;
+    }
+
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public List<Comentario> getAllComentarios() {
+        return comentarios;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public void setNotaProduto(int notaProduto) {
+        this.notaProduto = notaProduto;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
 }
