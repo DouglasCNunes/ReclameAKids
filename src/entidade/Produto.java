@@ -8,17 +8,17 @@ public class Produto {
     private int idadeRecomendada;
     private List<Avaliacao> avaliacoes;
     private Empresa empresa;
-    private Categoria categoria;
+    private List<Categoria> categorias;
 
     
 
     public Produto(String nome, int idadeRecomendada,Empresa empresa,
-            Categoria categoria) {
+        List<Categoria> categorias) {
         this.nome = nome;
         this.idadeRecomendada = idadeRecomendada;
         this.avaliacoes = new ArrayList<Avaliacao>();
         this.empresa = empresa;
-        this.categoria = categoria;
+        this.categorias = categorias;
     }
 
     public List<Avaliacao> getAllAvaliacoes() {
@@ -57,12 +57,12 @@ public class Produto {
         this.empresa = empresa;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public List<Categoria> getCategorias() {
+        return categorias;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
 
 }

@@ -1,18 +1,18 @@
 package entidade;
 
 public class Filho {
-    private int dataNascimento;
+    private int idade;
 
-    public Filho(int dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public Filho(int idade) {
+        this.idade = idade;
     }
 
-    public int getDataNascimento() {
-        return dataNascimento;
+    public int getIdade() {
+        return idade;
     }
 
-    public void setDataNascimento(int dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
 }

@@ -8,12 +8,10 @@ public class Avaliador extends Usuario{
     private List<Filho> filhos;
     private List<Produto> favoritos;
     
-    public Avaliador(String login, String senha, String nome, String email, String dataNascimento,
-            List<Produto> favoritos) {
+    public Avaliador(String login, String senha, String nome, String email, String dataNascimento) {
         super(login, senha, nome, email);
         this.dataNascimento = dataNascimento;
         this.filhos = new ArrayList<Filho>();
-        this.favoritos = new ArrayList<Produto>();
     }
 
     public boolean addFilho (Filho filho) {
