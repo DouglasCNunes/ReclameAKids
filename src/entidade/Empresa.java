@@ -53,11 +53,11 @@ public class Empresa {
         this.responsavelEmpresa = responsavelEmpresa;
     }
 
-    public boolean isvalida() {
+    public boolean isValida() {
         return valida;
     }
 
-    public void setvalida(boolean valida) {
+    public void setValida(boolean valida) {
         this.valida = valida;
     }
 

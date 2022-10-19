@@ -3,8 +3,8 @@ package entidade;
 public class ResponsavelEmpresa extends Usuario {
     private Empresa empresa;
 
-    public ResponsavelEmpresa(String login, String senha, String nome, String email, Empresa empresa) {
-        super(login, senha, nome, email);
+    public ResponsavelEmpresa(String email, String senha, String nome, Empresa empresa) {
+        super(email, senha, nome);
         this.empresa = empresa;
     }
 

@@ -10,10 +10,7 @@ public class Produto {
     private Empresa empresa;
     private List<Categoria> categorias;
 
-    
-
-    public Produto(String nome, int idadeRecomendada,Empresa empresa,
-        List<Categoria> categorias) {
+    public Produto(String nome, int idadeRecomendada, Empresa empresa, List<Categoria> categorias) {
         this.nome = nome;
         this.idadeRecomendada = idadeRecomendada;
         this.avaliacoes = new ArrayList<Avaliacao>();
@@ -63,6 +60,15 @@ public class Produto {
 
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    public float avaliacaoMedia() {
+        float media = 0;
+        for (int i = 0; i < this.avaliacoes.size(); i++) {
+            media += this.avaliacoes.get(i).getNotaProduto();
+        }
+        media = media / this.avaliacoes.size();
+        return media;
     }
 
 }

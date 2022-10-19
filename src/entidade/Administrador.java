@@ -6,8 +6,8 @@ import java.util.List;
 public class Administrador extends Usuario {
     private List<Notificacao> notificacoes;
 
-    public Administrador(String login, String senha, String nome, String email) {
-        super(login, senha, nome, email);
+    public Administrador(String email, String senha, String nome) {
+        super(email, senha, nome);
         this.notificacoes = new ArrayList<Notificacao>();
     }
 

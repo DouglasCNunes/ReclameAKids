@@ -1,24 +1,23 @@
 package entidade;
 
 public abstract class Usuario {
-    private String login;
+    private String email;
     private String senha;
     private String nome;
-    private String email;
+    // Adicionar foto de perfil ao/se implementar interface gráfica
 
-    public Usuario(String login, String senha, String nome, String email) {
+    public Usuario(String email, String senha, String nome) {
         this.email = email;
-        this.login = login;
         this.senha = senha;
         this.nome = nome;
     }
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
@@ -35,14 +34,6 @@ public abstract class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
 }

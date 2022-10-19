@@ -54,7 +54,7 @@ public abstract class Publicacao {
         this.publicador = publicador;
     }
 
-    protected boolean isCurtida(Avaliador avaliadorCurtida) {
+    protected boolean isCurtida(Avaliador avaliadorCurtida) { // Determina se o avaliador logado curtiu a publicação
         List<Avaliador> curtidas = getAllCurtidas();
         boolean isCurtida = false;
 
