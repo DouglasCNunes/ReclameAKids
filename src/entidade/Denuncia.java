@@ -16,8 +16,4 @@ public class Denuncia extends Notificacao {
         this.publicacao = publicacao;
     }
 
-    @Override
-    public void setAutor(Usuario autor) {
-        // TODO Auto-generated method stub
-    }
 }

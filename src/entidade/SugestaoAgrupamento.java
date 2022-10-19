@@ -11,11 +11,6 @@ public class SugestaoAgrupamento extends Notificacao {
         this.produtos = new ArrayList<Produto>();
     }
 
-    @Override
-    public void setAutor(Usuario autor) {
-        // TODO Auto-generated method stub
-    }
-
     public List<Produto> getProdutos() {
         return produtos;
     }

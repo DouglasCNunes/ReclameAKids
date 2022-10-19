@@ -14,7 +14,9 @@ public abstract class Notificacao {
         return autor;
     }
 
-    public abstract void setAutor(Usuario autor);
+    public void setAutor(Usuario autor) {
+        this.autor = autor;
+    }
     
     public String getMotivo() {
         return motivo;
