@@ -1,10 +1,10 @@
-package entidade;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Publicacao {
-    private String descricao;
+	private String descricao;
     private String data;
     private List<Avaliador> curtidas;
     private Avaliador publicador;
@@ -16,7 +16,9 @@ public abstract class Publicacao {
         this.curtidas = new ArrayList<>();
     }
 
-    public String getDescricao() {
+    
+
+	public String getDescricao() {
         return descricao;
     }
 

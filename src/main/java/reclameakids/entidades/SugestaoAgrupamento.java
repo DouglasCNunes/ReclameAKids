@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,4 +22,5 @@ public class SugestaoAgrupamento extends Notificacao {
     public boolean removeProduto(Produto produto) {
         return this.removeProduto(produto);
     }
+
 }

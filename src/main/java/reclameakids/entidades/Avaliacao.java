@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,9 @@ public class Avaliacao extends Publicacao {
 
     // Constructor para avaliação caso produto e empresa não existam
 
-    public List<Avaliador> getAllDescurtidas() {
+   
+
+	public List<Avaliador> getAllDescurtidas() {
         return descurtidas;
     }
 
@@ -108,5 +110,6 @@ public class Avaliacao extends Publicacao {
     public void setProduto(Produto produto) {
         this.produto = produto;
     }
+
 
 }

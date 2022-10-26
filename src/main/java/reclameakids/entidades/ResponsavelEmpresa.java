@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 public class ResponsavelEmpresa extends Usuario {
     private Empresa empresa;
@@ -15,5 +15,5 @@ public class ResponsavelEmpresa extends Usuario {
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
-    
+
 }

@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;

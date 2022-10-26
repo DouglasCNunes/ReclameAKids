@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 public class Denuncia extends Notificacao {
     private Publicacao publicacao;
@@ -8,7 +8,8 @@ public class Denuncia extends Notificacao {
         this.publicacao = publicacao;
     }
 
-    public Publicacao getPublicacao() {
+
+	public Publicacao getPublicacao() {
         return publicacao;
     }
 

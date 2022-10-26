@@ -1,4 +1,4 @@
-package entidade;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Avaliador extends Usuario{
         this.filhos = new ArrayList<Filho>();
     }
 
-    public boolean addFilho (Filho filho) {
+	public boolean addFilho (Filho filho) {
         return this.filhos.add(filho);
     }
 
@@ -46,5 +46,4 @@ public class Avaliador extends Usuario{
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-        
 }
