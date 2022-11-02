@@ -3,6 +3,8 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import reclameakids.entidades.produto.Produto;
+
 public class Avaliador extends Usuario{
     private String dataNascimento;
     private List<Filho> filhos;

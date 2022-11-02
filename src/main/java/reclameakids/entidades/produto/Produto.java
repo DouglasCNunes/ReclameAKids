@@ -1,7 +1,11 @@
-package reclameakids.entidades;
+package reclameakids.entidades.produto;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import reclameakids.entidades.Categoria;
+import reclameakids.entidades.Empresa;
+import reclameakids.entidades.avaliacao.Avaliacao;
 
 public class Produto {
 	 private String nome;
@@ -18,7 +22,10 @@ public class Produto {
 	        this.categorias = categorias;
 	    }
 
-	   
+	   public Produto() {
+			this.avaliacoes = new ArrayList<Avaliacao>();
+			this.categorias = new ArrayList<Categoria>();
+	   }
 
 		public List<Avaliacao> getAllAvaliacoes() {
 	        return avaliacoes;
@@ -60,9 +67,19 @@ public class Produto {
 	        return categorias;
 	    }
 
-	    public void setCategorias(List<Categoria> categorias) {
-	        this.categorias = categorias;
-	    }
+		//Adicionar somente 1 categoria e garantir que nao seja repetida
+		public void addCategoria(Categoria categoria) {
+			if(!this.categorias.contains(categoria)) {
+				this.categorias.add(categoria);
+			}
+		}
+
+		//Adicionar uma lista de categorias e garantir que nao sejam repetidas
+		public void setCategorias(List<Categoria> ListaCategoria) {
+			for(Categoria categoria : ListaCategoria) {
+				addCategoria(categoria);
+			}
+		}
 
 	    public float avaliacaoMedia() {
 	        float media = 0;
