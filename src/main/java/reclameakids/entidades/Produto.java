@@ -3,11 +3,37 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="produto")
 public class Produto {
-	 private String nome;
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int id;
+	 	private String nome;
 	    private int idadeRecomendada;
+	    @OneToMany(mappedBy = "produto", cascade = { CascadeType.PERSIST })
 	    private List<Avaliacao> avaliacoes;
+	    @ManyToOne(cascade = { CascadeType.PERSIST })
+	    @JoinColumn(name="idEmpresa")
 	    private Empresa empresa;
+	    @ManyToMany(cascade = { CascadeType.ALL })
+	    @JoinTable(
+	        name = "produtosCategoria", 
+	        joinColumns = { @JoinColumn(name = "idProduto") }, 
+	        inverseJoinColumns = { @JoinColumn(name = "idCategoria")})
 	    private List<Categoria> categorias;
 
 	    public Produto(String nome, int idadeRecomendada, Empresa empresa, List<Categoria> categorias) {
@@ -17,7 +43,8 @@ public class Produto {
 	        this.empresa = empresa;
 	        this.categorias = categorias;
 	    }
-
+	    
+	    protected Produto() {}
 	   
 
 		public List<Avaliacao> getAllAvaliacoes() {

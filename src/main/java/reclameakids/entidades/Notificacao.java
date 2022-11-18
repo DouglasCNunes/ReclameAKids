@@ -1,6 +1,25 @@
 package reclameakids.entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="notificacao")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Notificacao {
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int id;
+		@ManyToOne
+	    @JoinColumn(name = "idUsuario", referencedColumnName = "id")
 	 	private Usuario autor;
 	    private String motivo;
 	    private boolean resolvida;
@@ -8,6 +27,10 @@ public class Notificacao {
 	    public Notificacao(Usuario autor, String motivo) {
 	        this.autor = autor;
 	        this.motivo = motivo;
+	    }
+	    
+	    protected Notificacao() {
+	    	
 	    }
 
 	   

@@ -1,11 +1,24 @@
 package reclameakids.entidades;
 
-public class Empresa {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-	 private String cnpj;
+@Entity
+@Table(name="empresa")
+public class Empresa {
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int id;
+		private String cnpj;
 	    private String ie;
 	    private String razaoSocial;
 	    private String nomeFantasia;
+	    @OneToOne(mappedBy = "empresa")
 	    private ResponsavelEmpresa responsavelEmpresa;
 	    private boolean valida;
 
@@ -13,6 +26,8 @@ public class Empresa {
 	        this.nomeFantasia = nomeFantasia;
 	        this.valida = valida;
 	    }
+	    
+	    protected Empresa() {}
 
 	 
 

@@ -3,14 +3,37 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="administrador")
+@PrimaryKeyJoinColumn(name="idUsuario")
 public class Administrador extends Usuario {
-    private List<Notificacao> notificacoes;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@OneToMany()
+    @JoinColumn(name = "idAdministrador")
+    private List<Notificacao> notificacoes = new ArrayList<Notificacao>();
 
     public Administrador(String email, String senha, String nome) {
         super(email, senha, nome);
-        this.notificacoes = new ArrayList<Notificacao>();
     }
 
+    
+    protected Administrador()
+    {}
+    
     // constructor passando usuário
 
     public List<Notificacao> getAllNotificacoes() {

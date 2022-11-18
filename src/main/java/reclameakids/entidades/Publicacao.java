@@ -3,10 +3,37 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="publicacao")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Publicacao {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String descricao;
     private String data;
+    @ManyToMany
+    @JoinTable(
+            name = "produtoscurtida", 
+            joinColumns = { @JoinColumn(name = "idPublicacao") }, 
+            inverseJoinColumns = { @JoinColumn(name = "idAvaliador")})
     private List<Avaliador> curtidas;
+    @OneToOne
+    @JoinColumn(name = "idPublicador", referencedColumnName = "id")
     private Avaliador publicador;
 
     public Publicacao(String descricao, String data, Avaliador publicador) {
@@ -16,7 +43,8 @@ public abstract class Publicacao {
         this.curtidas = new ArrayList<>();
     }
 
-    
+
+    protected Publicacao() {}
 
 	public String getDescricao() {
         return descricao;

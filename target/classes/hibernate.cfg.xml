@@ -24,6 +24,20 @@
            
             <mapping class = "reclameakids.entidades.Categoria" ></mapping>
             <mapping class = "reclameakids.entidades.Filho" ></mapping>
+            <mapping class = "reclameakids.entidades.Empresa" ></mapping>
+            <mapping class = "reclameakids.entidades.Usuario" ></mapping>
+            <mapping class = "reclameakids.entidades.ResponsavelEmpresa" ></mapping>
+            <mapping class = "reclameakids.entidades.Notificacao" ></mapping>
+            <mapping class = "reclameakids.entidades.Administrador" ></mapping>
+            <mapping class = "reclameakids.entidades.Avaliador" ></mapping>
+            <mapping class = "reclameakids.entidades.Produto" ></mapping>
+            <mapping class = "reclameakids.entidades.Avaliacao" ></mapping>
+            <mapping class = "reclameakids.entidades.Publicacao" ></mapping>
+            <mapping class = "reclameakids.entidades.Comentario" ></mapping>
+            <mapping class = "reclameakids.entidades.SugestaoAgrupamento" ></mapping>
+            <mapping class = "reclameakids.entidades.Denuncia" ></mapping>
+           
+
             
 
         </session-factory>

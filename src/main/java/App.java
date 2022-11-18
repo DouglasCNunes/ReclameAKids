@@ -1,11 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import reclameakids.DAO.AdministradorDAO;
+import reclameakids.DAO.AvaliadorDAO;
 import reclameakids.DAO.CategoriaDAO;
+import reclameakids.DAO.ComentarioDAO;
+import reclameakids.DAO.EmpresaDAO;
 import reclameakids.DAO.FilhoDAO;
+import reclameakids.DAO.IAdministradorDAO;
+import reclameakids.DAO.IAvaliadorDAO;
 import reclameakids.DAO.ICategoriaDAO;
+import reclameakids.DAO.IComentarioDAO;
+import reclameakids.DAO.IEmpresaDAO;
 import reclameakids.DAO.IFilhoDAO;
-import reclameakids.DAO.IFilhoDAO;
+import reclameakids.DAO.INotificacaoDAO;
+import reclameakids.DAO.IProdutoDAO;
+import reclameakids.DAO.IResponsavelEmpresaDAO;
+import reclameakids.DAO.NotificacaoDAO;
+import reclameakids.DAO.ProdutoDAO;
+import reclameakids.DAO.ResponsavelEmpresaDAO;
+import reclameakids.entidades.Administrador;
 import reclameakids.entidades.Avaliacao;
 import reclameakids.entidades.Avaliador;
 import reclameakids.entidades.Categoria;
@@ -13,7 +27,9 @@ import reclameakids.entidades.Comentario;
 import reclameakids.entidades.Denuncia;
 import reclameakids.entidades.Empresa;
 import reclameakids.entidades.Filho;
+import reclameakids.entidades.Notificacao;
 import reclameakids.entidades.Produto;
+import reclameakids.entidades.ResponsavelEmpresa;
 
 public class App {
 	public static void main(String[] args) throws Exception {
@@ -34,30 +50,91 @@ public class App {
         Comentario comentario = new Comentario("Avaliacao impropria! >:(", "18/10/2022", avaliador2);
         avaliacao.addComentario(comentario);
         Denuncia denuncia = new Denuncia(avaliador2, "Não gostei", avaliacao);
-    
-        ICategoriaDAO categoria = new CategoriaDAO();
+        
+        
+        
+        
+        
+        //-----------------------------------COMENTARIO-----------------------------------------------
+        
+        //IAvaliadorDAO avaDAO = new AvaliadorDAO();
+        //Avaliador ava = new Avaliador("avaliador1@email.com", "senha", "Avaliador 1", "01/01/1990");
+        
+        //IComentarioDAO comenDAO = new ComentarioDAO();
+        //comenDAO.inserir(new Comentario("Avaliacao impropria! >:(", "18/10/2022", avaDAO.recuperar(Avaliador.class, 1)));
+        
+        //-----------------------------------AVALIADOR&PRODUTO---------------------------------------------------------------------------------
+        
+        //IEmpresaDAO empresadao = new EmpresaDAO();
+        //empresadao.inserir(empresa);
+        
+        //IAvaliadorDAO ava = new AvaliadorDAO();
+        //ava.inserir(avaliador1);
+        
+        //IProdutoDAO prod = new ProdutoDAO();
+        //Produto produto2 = new Produto("Produto da empresa Empresa", 10, empresadao.recuperar(Empresa.class, 1), new ArrayList<Categoria>(){{ add(categoria1); }});
+        //prod.inserir(produto);
+        
+        
+        //------------------------------ADMINISTRADOR&NOTIFICACAO---------------------------------------------------------------------------------
+        
+        //Administrador adm = new Administrador("email", "senha", "nome");
+        //IAdministradorDAO admDAO = new AdministradorDAO();
+        //admDAO.inserir(adm);
+        
+        
+        //Notificacao not = new Notificacao(admDAO.recuperar(Administrador.class, 1), "PORQUE SIM KKKKKKKKKKKK");
+        //INotificacaoDAO notDAO = new NotificacaoDAO();
+        //notDAO.inserir(not);
+        
+        //adm = admDAO.recuperar(Administrador.class, 1);
+        //adm.addNotificacao(notDAO.recuperar(Notificacao.class, 1));
+        
+        //admDAO.alterar(adm);
+
+        
+        //System.out.println(admDAO.recuperar(Administrador.class , 1).getAllNotificacoes());
+        
+        
+        //-------------------------------------EMPRESA&RESPONSAVELEMPRESA-----------------------------------------------------------------------------
+        
+        //IEmpresaDAO empresadao = new EmpresaDAO();
+        //empresadao.inserir(empresa);
+        //ResponsavelEmpresa re = new ResponsavelEmpresa("ablueblue@gmail.com", "senhasegura", "carloskkk", empresadao.recuperar(Empresa.class, 1));
+        
+       // IResponsavelEmpresaDAO reDAO = new ResponsavelEmpresaDAO();
+        //reDAO.inserir(re);
+        
+        
+        
+        //-------------------------------------CATEGORIA&FILHOS-----------------------------------------------------------------------------
+        
+        //ICategoriaDAO categoria = new CategoriaDAO();
         
        
-        categoria.inserir(categoria1);
+        //categoria.inserir(categoria1);
         
-        categoria1.setNome("aoooba");
-        categoria.alterar(categoria1);
+        //categoria1.setNome("aoooba");
+        //categoria.alterar(categoria1);
+
+        //IFilhoDAO filho = new FilhoDAO();
+        //filho.inserir(filho1);
         
-        IFilhoDAO filho = new FilhoDAO();
-        filho.inserir(filho1);
+        //List<Categoria> categorias = categoria.listar(Categoria.class);
         
-        List<Categoria> categorias = categoria.listar(Categoria.class);
+        //for(int i = 0; i< categorias.size(); i++)
+        //{
+        //	System.out.println(categorias.get(i).getNome());
+        //}
         
-        for(int i = 0; i< categorias.size(); i++)
-        {
-        	System.out.println(categorias.get(i).getNome());
-        }
+       // Filho teste = filho.recuperar(Filho.class, 1);
         
-        Filho teste = filho.recuperar(Filho.class, 2);
+       // System.out.println(teste.getIdade());
         
-        System.out.println(teste.getIdade());
-        
-        categoria.deletar(categoria.recuperar(Categoria.class, 1));
+       //categoria.deletar(categoria.recuperar(Categoria.class, 1));
+	
+	
 	}
+	
 
 }
