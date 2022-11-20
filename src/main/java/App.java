@@ -27,9 +27,10 @@ import reclameakids.entidades.Comentario;
 import reclameakids.entidades.Denuncia;
 import reclameakids.entidades.Empresa;
 import reclameakids.entidades.Filho;
-import reclameakids.entidades.Notificacao;
-import reclameakids.entidades.Produto;
-import reclameakids.entidades.ResponsavelEmpresa;
+import reclameakids.entidades.avaliacao.Avaliacao;
+import reclameakids.entidades.produto.Produto;
+import reclameakids.entidades.avaliacao.*;
+import reclameakids.entidades.produto.*;
 
 public class App {
 	public static void main(String[] args) throws Exception {
@@ -44,8 +45,13 @@ public class App {
         Empresa empresa = new Empresa("Empresa", false);
         Categoria categoria1 = new Categoria("Categoria1");
         Categoria categoria2 = new Categoria("Categoria2");
-        Produto produto = new Produto("Produto da empresa Empresa", 10, empresa, new ArrayList<Categoria>(){{ add(categoria1); }});
-        Avaliacao avaliacao = new Avaliacao("imagem", 5, "Produto muito bom", produto, "18/10/2022", "Muito bom mesmo esse produto hein", avaliador1);
+
+        DiretorProduto diretorProduto = new DiretorProduto();
+        Produto produto = diretorProduto.builder("Lava e Seca Brastemp 13L", 10, empresa, new ArrayList<Categoria>(){{ add(categoria1); }});
+
+        DiretorAvaliacao diretorAvaliacao = new DiretorAvaliacao();
+        Avaliacao avaliacao = diretorAvaliacao.builder("imagem", 5, "Produto muito bom", "Lava e Seca Brastemp 13L", "18/10/2022", "Muito bom mesmo esse produto hein", avaliador1);
+
         Avaliador avaliador2 = new Avaliador("avaliador2@email.com", "senha", "Avaliador 2", "01/01/1990");
         Comentario comentario = new Comentario("Avaliacao impropria! >:(", "18/10/2022", avaliador2);
         avaliacao.addComentario(comentario);
@@ -136,5 +142,6 @@ public class App {
 	
 	}
 	
+
 
 }
