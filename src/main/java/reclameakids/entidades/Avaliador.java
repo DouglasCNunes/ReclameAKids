@@ -41,6 +41,12 @@ public class Avaliador extends Usuario{
         this.dataNascimento = dataNascimento;
         this.filhos = new ArrayList<Filho>();
     }
+
+    public Avaliador(String email, String senha, String nome) {
+        super(email, senha, nome);
+        this.filhos = new ArrayList<Filho>();
+    }
+
     
     protected Avaliador() {}
 
