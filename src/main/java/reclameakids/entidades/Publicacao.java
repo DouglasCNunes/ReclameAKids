@@ -43,7 +43,8 @@ public abstract class Publicacao {
         this.curtidas = new ArrayList<>();
     }
 
-    public Publicacao() {}
+
+    protected Publicacao() {}
 
 	public String getDescricao() {
         return descricao;

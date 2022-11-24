@@ -17,8 +17,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="sugestaoagrupamento")
 @PrimaryKeyJoinColumn(name="idNotificacao")
-import reclameakids.entidades.produto.Produto;
-
 public class SugestaoAgrupamento extends Notificacao {
 	
 	@Id

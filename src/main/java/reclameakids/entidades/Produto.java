@@ -1,4 +1,4 @@
-package reclameakids.entidades.produto;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="produto")
-import reclameakids.entidades.Categoria;
-import reclameakids.entidades.Empresa;
-import reclameakids.entidades.avaliacao.Avaliacao;
-
 public class Produto {
 	
 		@Id
@@ -47,17 +43,9 @@ public class Produto {
 	        this.empresa = empresa;
 	        this.categorias = categorias;
 	    }
-<<<<<<< HEAD:src/main/java/reclameakids/entidades/Produto.java
 	    
 	    protected Produto() {}
 	   
-=======
-
-	   public Produto() {
-			this.avaliacoes = new ArrayList<Avaliacao>();
-			this.categorias = new ArrayList<Categoria>();
-	   }
->>>>>>> builder:src/main/java/reclameakids/entidades/produto/Produto.java
 
 		public List<Avaliacao> getAllAvaliacoes() {
 	        return avaliacoes;
@@ -99,19 +87,9 @@ public class Produto {
 	        return categorias;
 	    }
 
-		//Adicionar somente 1 categoria e garantir que nao seja repetida
-		public void addCategoria(Categoria categoria) {
-			if(!this.categorias.contains(categoria)) {
-				this.categorias.add(categoria);
-			}
-		}
-
-		//Adicionar uma lista de categorias e garantir que nao sejam repetidas
-		public void setCategorias(List<Categoria> ListaCategoria) {
-			for(Categoria categoria : ListaCategoria) {
-				addCategoria(categoria);
-			}
-		}
+	    public void setCategorias(List<Categoria> categorias) {
+	        this.categorias = categorias;
+	    }
 
 	    public float avaliacaoMedia() {
 	        float media = 0;

@@ -20,8 +20,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="avaliador")
 @PrimaryKeyJoinColumn(name="idUsuario")
-import reclameakids.entidades.produto.Produto;
-
 public class Avaliador extends Usuario{
 	
 	@Id
