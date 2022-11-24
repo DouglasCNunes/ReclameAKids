@@ -1,4 +1,4 @@
-package reclameakids.entidades.avaliacao;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;

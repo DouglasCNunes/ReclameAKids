@@ -17,9 +17,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="produto")
+import reclameakids.entidades.Avaliacao;
 import reclameakids.entidades.Categoria;
 import reclameakids.entidades.Empresa;
-import reclameakids.entidades.avaliacao.Avaliacao;
 
 public class Produto {
 	

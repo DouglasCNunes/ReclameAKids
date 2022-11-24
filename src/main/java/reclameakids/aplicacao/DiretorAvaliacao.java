@@ -1,7 +1,7 @@
-package reclameakids.entidades.avaliacao;
+package reclameakids.aplicacao;
 
+import reclameakids.entidades.Avaliacao;
 import reclameakids.entidades.Avaliador;
-import reclameakids.entidades.produto.Produto;
 
 public class DiretorAvaliacao {
 

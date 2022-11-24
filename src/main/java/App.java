@@ -20,6 +20,8 @@ import reclameakids.DAO.NotificacaoDAO;
 import reclameakids.DAO.ProdutoDAO;
 import reclameakids.DAO.ResponsavelEmpresaDAO;
 import reclameakids.entidades.Administrador;
+import reclameakids.aplicacao.*;
+import reclameakids.DAO.IFilhoDAO;
 import reclameakids.entidades.Avaliacao;
 import reclameakids.entidades.Avaliador;
 import reclameakids.entidades.Categoria;
@@ -27,9 +29,7 @@ import reclameakids.entidades.Comentario;
 import reclameakids.entidades.Denuncia;
 import reclameakids.entidades.Empresa;
 import reclameakids.entidades.Filho;
-import reclameakids.entidades.avaliacao.Avaliacao;
 import reclameakids.entidades.produto.Produto;
-import reclameakids.entidades.avaliacao.*;
 import reclameakids.entidades.produto.*;
 
 public class App {
