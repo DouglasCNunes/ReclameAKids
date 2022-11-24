@@ -1,11 +1,8 @@
-package reclameakids.entidades.avaliacao;
+package reclameakids.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import reclameakids.entidades.Avaliador;
-import reclameakids.entidades.Comentario;
-import reclameakids.entidades.Publicacao;
 import reclameakids.entidades.produto.Produto;
 
 public class Avaliacao extends Publicacao {

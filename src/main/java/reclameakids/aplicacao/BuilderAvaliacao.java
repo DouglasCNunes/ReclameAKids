@@ -1,8 +1,9 @@
-package reclameakids.entidades.avaliacao;
+package reclameakids.aplicacao;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import reclameakids.entidades.Avaliacao;
 import reclameakids.entidades.Avaliador;
 import reclameakids.entidades.produto.Produto;
 
