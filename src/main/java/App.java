@@ -21,15 +21,23 @@ import reclameakids.DAO.ProdutoDAO;
 import reclameakids.DAO.ResponsavelEmpresaDAO;
 import reclameakids.entidades.Administrador;
 import reclameakids.entidades.Avaliacao;
+import reclameakids.DAO.IFilhoDAO;
 import reclameakids.entidades.Avaliador;
 import reclameakids.entidades.Categoria;
 import reclameakids.entidades.Comentario;
 import reclameakids.entidades.Denuncia;
 import reclameakids.entidades.Empresa;
 import reclameakids.entidades.Filho;
+<<<<<<< HEAD
 import reclameakids.entidades.Notificacao;
 import reclameakids.entidades.Produto;
 import reclameakids.entidades.ResponsavelEmpresa;
+=======
+import reclameakids.entidades.avaliacao.Avaliacao;
+import reclameakids.entidades.produto.Produto;
+import reclameakids.entidades.avaliacao.*;
+import reclameakids.entidades.produto.*;
+>>>>>>> builder
 
 public class App {
 	public static void main(String[] args) throws Exception {
@@ -44,12 +52,18 @@ public class App {
         Empresa empresa = new Empresa("Empresa", false);
         Categoria categoria1 = new Categoria("Categoria1");
         Categoria categoria2 = new Categoria("Categoria2");
-        Produto produto = new Produto("Produto da empresa Empresa", 10, empresa, new ArrayList<Categoria>(){{ add(categoria1); }});
-        Avaliacao avaliacao = new Avaliacao("imagem", 5, "Produto muito bom", produto, "18/10/2022", "Muito bom mesmo esse produto hein", avaliador1);
+
+        DiretorProduto diretorProduto = new DiretorProduto();
+        Produto produto = diretorProduto.builder("Lava e Seca Brastemp 13L", 10, empresa, new ArrayList<Categoria>(){{ add(categoria1); }});
+
+        DiretorAvaliacao diretorAvaliacao = new DiretorAvaliacao();
+        Avaliacao avaliacao = diretorAvaliacao.builder("imagem", 5, "Produto muito bom", "Lava e Seca Brastemp 13L", "18/10/2022", "Muito bom mesmo esse produto hein", avaliador1);
+
         Avaliador avaliador2 = new Avaliador("avaliador2@email.com", "senha", "Avaliador 2", "01/01/1990");
         Comentario comentario = new Comentario("Avaliacao impropria! >:(", "18/10/2022", avaliador2);
         avaliacao.addComentario(comentario);
         Denuncia denuncia = new Denuncia(avaliador2, "Não gostei", avaliacao);
+<<<<<<< HEAD
         
         
         
@@ -110,6 +124,10 @@ public class App {
         //-------------------------------------CATEGORIA&FILHOS-----------------------------------------------------------------------------
         
         //ICategoriaDAO categoria = new CategoriaDAO();
+=======
+        /*
+        ICategoriaDAO categoria = new CategoriaDAO();
+>>>>>>> builder
         
        
         //categoria.inserir(categoria1);
@@ -131,10 +149,17 @@ public class App {
         
        // System.out.println(teste.getIdade());
         
+<<<<<<< HEAD
        //categoria.deletar(categoria.recuperar(Categoria.class, 1));
 	
 	
+=======
+        System.out.println(teste.getIdade());
+        
+        categoria.deletar(categoria.recuperar(Categoria.class, 1)); */
+>>>>>>> builder
 	}
 	
+
 
 }

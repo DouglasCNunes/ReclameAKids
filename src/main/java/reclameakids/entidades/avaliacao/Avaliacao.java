@@ -1,4 +1,4 @@
-package reclameakids.entidades;
+package reclameakids.entidades.avaliacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="avaliacao")
 @PrimaryKeyJoinColumn(name="idPublicacao")
+import reclameakids.entidades.Avaliador;
+import reclameakids.entidades.Comentario;
+import reclameakids.entidades.Publicacao;
+import reclameakids.entidades.produto.Produto;
+
 public class Avaliacao extends Publicacao {
     
 	@Id
@@ -42,8 +47,7 @@ public class Avaliacao extends Publicacao {
     private List<Avaliador> descurtidas;
 
     // Constructor para Avaliação caso Produto e Empresa existam
-    public Avaliacao(String imagem, int notaProduto, String titulo, Produto produto, String data, String descricao,
-            Avaliador publicador) {
+    public Avaliacao(String imagem, int notaProduto, String titulo, Produto produto, String data, String descricao, Avaliador publicador) {
         super(descricao, data, publicador);
         this.imagem = imagem;
         this.notaProduto = notaProduto;
@@ -55,6 +59,7 @@ public class Avaliacao extends Publicacao {
         produto.addAvaliacao(this);
     }
 
+<<<<<<< HEAD:src/main/java/reclameakids/entidades/Avaliacao.java
     // Constructor para avaliação caso produto não exista e empresa exista
 
     // Constructor para avaliação caso produto e empresa não existam
@@ -63,6 +68,14 @@ public class Avaliacao extends Publicacao {
     protected Avaliacao() {}
     
     
+=======
+    public Avaliacao() {
+        this.comentarios = new ArrayList<Comentario>();
+        this.descurtidas = new ArrayList<Avaliador>();
+    }
+ 
+
+>>>>>>> builder:src/main/java/reclameakids/entidades/avaliacao/Avaliacao.java
 	public List<Avaliador> getAllDescurtidas() {
         return descurtidas;
     }
