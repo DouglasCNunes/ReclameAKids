@@ -44,8 +44,6 @@ public abstract class Publicacao {
     }
 
 
-    protected Publicacao() {}
-    
     public Publicacao() {}
 
 	public String getDescricao() {

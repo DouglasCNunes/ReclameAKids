@@ -3,6 +3,8 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import reclameakids.aplicacao.Observador;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="administrador")
 @PrimaryKeyJoinColumn(name="idUsuario")
-public class Administrador extends Usuario {
+public class Administrador extends Usuario implements Observador{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,6 +48,10 @@ public class Administrador extends Usuario {
 
     public boolean removeNotificacoes(Notificacao notificacao) {
         return this.notificacoes.remove(notificacao);
+    }
+
+    public notificar(Observavel ob) {
+        System.out.println("Enviando e-mail para o administrador " + super(nome) + " sobre a notificacao " + ob);
     }
 
 }

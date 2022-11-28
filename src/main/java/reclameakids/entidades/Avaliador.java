@@ -15,13 +15,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import reclameakids.entidades.produto.Produto;
+
 
 
 @Entity
 @Table(name="avaliador")
 @PrimaryKeyJoinColumn(name="idUsuario")
-import reclameakids.entidades.produto.Produto;
-
 public class Avaliador extends Usuario{
 	
 	@Id

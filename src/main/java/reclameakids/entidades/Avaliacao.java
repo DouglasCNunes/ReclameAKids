@@ -16,15 +16,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
-@Entity
-@Table(name="avaliacao")
-@PrimaryKeyJoinColumn(name="idPublicacao")
 import reclameakids.entidades.Avaliador;
 import reclameakids.entidades.Comentario;
 import reclameakids.entidades.Publicacao;
 import reclameakids.entidades.produto.Produto;
 
+@Entity
+@Table(name="avaliacao")
+@PrimaryKeyJoinColumn(name="idPublicacao")
 public class Avaliacao extends Publicacao {
     
 	@Id
@@ -47,7 +46,8 @@ public class Avaliacao extends Publicacao {
     private List<Avaliador> descurtidas;
 
     // Constructor para Avaliação caso Produto e Empresa existam
-    public Avaliacao(String imagem, int notaProduto, String titulo, Produto produto, String data, String descricao, Avaliador publicador) {
+    public Avaliacao(String imagem, int notaProduto, String titulo, Produto produto, String data, String descricao,
+            Avaliador publicador) {
         super(descricao, data, publicador);
         this.imagem = imagem;
         this.notaProduto = notaProduto;
@@ -64,8 +64,7 @@ public class Avaliacao extends Publicacao {
     // Constructor para avaliação caso produto e empresa não existam
 
    
-    protected Avaliacao() {}
-    
+
     
     public Avaliacao() {
         this.comentarios = new ArrayList<Comentario>();

@@ -13,12 +13,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import reclameakids.entidades.produto.Produto;
 
 @Entity
 @Table(name="sugestaoagrupamento")
 @PrimaryKeyJoinColumn(name="idNotificacao")
-import reclameakids.entidades.produto.Produto;
-
 public class SugestaoAgrupamento extends Notificacao {
 	
 	@Id

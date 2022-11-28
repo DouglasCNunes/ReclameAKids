@@ -1,5 +1,7 @@
 package reclameakids.entidades;
 
+import reclameakids.aplicacao.Observavel;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="notificacao")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Notificacao {
+public class Notificacao extends Observavel{
 	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +26,13 @@ public class Notificacao {
 	    private String motivo;
 	    private boolean resolvida;
 	    
-	    public Notificacao(Usuario autor, String motivo) {
+	    public Notificacao(Usuario autor, String motivo, List<Administrador> responsaveis) {
 	        this.autor = autor;
 	        this.motivo = motivo;
+			for(Administrador ob : responsaveis) {
+				this.addObservador(ob);
+			}
+			this.notificarObservadores();
 	    }
 	    
 	    protected Notificacao() {
