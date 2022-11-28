@@ -3,7 +3,8 @@ package reclameakids.entidades;
 import java.util.ArrayList;
 import java.util.List;
 
-import reclameakids.aplicacao.Observador;
+//import reclameakids.aplicacao.Observador;
+import reclameakids.aplicacao.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -50,8 +51,10 @@ public class Administrador extends Usuario implements Observador{
         return this.notificacoes.remove(notificacao);
     }
 
-    public notificar(Observavel ob) {
-        System.out.println("Enviando e-mail para o administrador " + super(nome) + " sobre a notificacao " + ob);
+    public void notificar(Observavel ob) {
+        System.out.println("Enviando e-mail para o administrador " + getNome() + " sobre a notificacao " + ob);
     }
+
+    
 
 }

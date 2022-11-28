@@ -2,6 +2,8 @@ package reclameakids.entidades;
 
 import reclameakids.aplicacao.Observavel;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -63,6 +65,7 @@ public class Notificacao extends Observavel{
 
 	    public void setResolvida(boolean resolvida) {
 	        this.resolvida = resolvida;
+			
 	    }
 
 }

@@ -1,8 +1,11 @@
 package reclameakids.aplicacao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Observavel {
 
-    private List<Observador> monitores = new ArrayList();
+    private List<Observador> monitores = new ArrayList<>();
 
     public void addObservador(Observador ob) {
         this.monitores.add(ob);

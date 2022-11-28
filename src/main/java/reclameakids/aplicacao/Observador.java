@@ -1,5 +1,5 @@
 package reclameakids.aplicacao;
 
-interface Observador {
-    void notificar();
+public interface Observador {
+    void notificar(Observavel ob);
 }
